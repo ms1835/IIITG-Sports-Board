@@ -1,0 +1,69 @@
+<%- include('./partials/header') -%>
+
+<!-- page header   -->
+	<header class="header bg-dark p-2">
+		<div class="wrapper">
+			<a href="#"><img src="/public/images/logo.png" height="50px" class="rounded"></a>
+			<nav class="header-right navbar bg-dark navbar-expand-sm navbar-light" id="mynavbar">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item "><a href="/" class="nav-link text-light rounded">Home</a></li>
+					<li class="nav-item"><a href="indoor" class="nav-link text-light rounded">Indoor</a></li>
+					<li class="nav-item"><a href="outdoor" class="nav-link text-light rounded">Outdoor</a></li>
+					<li class="nav-item"><a href="events" class="nav-link text-light rounded">Events</a></li>
+					<li class="nav-item"><a href="contact" class="nav-link text-light rounded active">Contact</a></li>
+					<li>
+						<a href="javascript:void(0);" class="icon btn openbtn bg-primary" onclick="openNav()">
+    					<i class="fa fa-bars"></i></a>
+    					<div id="mySidepanel" class="sidepanel">
+							<a href="javascript:void(0)" class="btn closebtn bg-danger" onclick="closeNav()">×</a>
+							<ul>
+							<li><a href="/" class="rounded">Home</a></li>
+							<li><a href="indoor" class="rounded">Indoor</a></li>
+							<li><a href="outdoor" class="rounded">Outdoor</a></li>
+							<li><a href="events" class="rounded">Events</a></li>
+							<li><a href="contact" class="rounded active">Contact</a></li>
+						</ul>
+						</div>
+  					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+<div class="container">
+			<div class="row row-content pt-5">
+				<div class="col-12">
+					<h1  class="text-center">Faculty Coordinators</h1>
+				</div>
+				<div class="col-12 offset-md-1 col-md-5 py-4">
+					<img class=" img-response rounded-circle mx-auto d-block border border-dark" src="/public/images/mansoor.jpg">
+					<h4 class="text-center pt-3">Md. Mansoor Khan</h4>
+					<p class="text-center">Outdoor Sports</p>
+					<p class="text-center"><i class="fa fa-envelope fa-lg"></i> mansoor@iiitg.ac.in</p>
+				</div>
+				<div class="col-12 col-md-5 py-4">
+					<img class=" img-response rounded-circle mx-auto d-block border border-dark" src="/public/images/rakesh.jpg">
+					<h4 class="text-center pt-3">Dr. Rakesh Biswas</h4>
+					<p class="text-center">Indoor Sports</p>
+					<p class="text-center"><i class="fa fa-envelope fa-lg"></i> b.rakesh@iiitg.ac.in</p>
+				</div>
+			</div>
+
+			<div class="row row-content pt-5">
+				<div class="col-12">
+					<h1  class="text-center">Student Coordinators</h1>
+				</div>
+				<div class="col-12 offset-md-1 col-md-4 py-4">
+					<img class=" img-response rounded-circle mx-auto d-block border border-dark" src="">
+					<h4 class="text-center pt-3">Shubham Bhagat</h4>
+					<p class="text-center">Outdoor Sports</p>
+				</div>
+				<div class="col-12 offset-md-2 col-md-4 py-4">
+					<img class=" img-response rounded-circle mx-auto d-block border border-dark" src="">
+					<h4 class="text-center pt-3">Ashmit Ayush</h4>
+					<p class="text-center">Indoor Sports</p>
+				</div>
+			</div>
+		</div>
+
+<%- include('./partials/footer') -%>

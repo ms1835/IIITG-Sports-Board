@@ -1,0 +1,24 @@
+{
+  "name": "iiitg-sports-board",
+  "version": "1.0.0",
+  "description": "\"Sports Board Website\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ms1835/IIITG-Sports-Board.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ms1835/IIITG-Sports-Board/issues"
+  },
+  "homepage": "https://github.com/ms1835/IIITG-Sports-Board#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
