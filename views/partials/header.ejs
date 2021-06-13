@@ -1,17 +1,68 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Sports Boards</title>
+		<title>Sports Board</title>
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="public/css/styles.css"> 
+		<link rel="stylesheet" href="/public/css/styles.css"> 
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
 	</head>
 	<body>
-	
+		<!-- page header   -->
+	<header class="header bg-dark p-2">
+		<div class="wrapper">
+			<a href="#"><img src="/public/images/logo.png" height="50px" class="rounded"></a>
+			<nav class="header-right navbar bg-dark navbar-expand-sm navbar-light" id="mynavbar">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item "><a href="/" class="nav-link text-light rounded">Home</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle text-light rounded" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Indoor</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+						<a class="dropdown-item" href="/tableTennis">Table Tennis</a>
+						<a class="dropdown-item" href="/badminton">Badminton</a>
+						<a class="dropdown-item" href="/chess">Chess</a>
+						<a class="dropdown-item" href="/carrom">Carrom</a>
+					  </li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle text-light rounded" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Outdoor</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+						<a class="dropdown-item" href="/cricket">Cricket</a>
+						<a class="dropdown-item" href="/football">Football</a>
+						<a class="dropdown-item" href="/volleyball">Volleyball</a>
+						<a class="dropdown-item" href="/athletics">Athletics</a>
+					  </li>
+					<li class="nav-item"><a href="/event" class="nav-link text-light rounded">Events</a></li>
+					<li class="nav-item"><a href="/contact" class="nav-link text-light rounded">Contact</a></li>
+					<li>
+						<a href="javascript:void(0);" class="icon btn openbtn bg-primary" onclick="openNav()">
+    					<i class="fa fa-bars"></i></a>
+    					<div id="mySidepanel" class="sidepanel">
+							<a href="javascript:void(0)" class="btn closebtn bg-danger" onclick="closeNav()">×</a>
+							<ul>
+							<li><a href="/" class="rounded">Home</a></li>
+							<li><a href="/cricket" class="rounded">Cricket</a></li>
+							<li><a href="/football" class="rounded">Football</a></li>
+							<li><a href="/volleyball" class="rounded">Volleyball</a></li>
+							<li><a href="athletics" class="rounded">Athletics</a></li>
+							<li><a href="/tableTennis" class="rounded">Table Tennis</a></li>
+							<li><a href="/chess" class="rounded">Chess</a></li>
+							<li><a href="/carrom" class="rounded">Carrom</a></li>
+							<li><a href="/badminton" class="rounded">Badminton</a></li>
+							<li><a href="/event" class="rounded">Events</a></li>
+							<li><a href="/contact" class="rounded">Contact</a></li>
+						</ul>
+						</div>
+  					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 	

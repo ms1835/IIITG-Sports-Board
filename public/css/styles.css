@@ -3,10 +3,11 @@
 }
 
 h1,h2,h3 {
-	font-family: "Audiowide", sans-serif;
+  font-family: "Sofia"; 
 }
 li,h4,h5 {
-	font-family: "Sofia", sans-serif;
+	/* font-family: "Sofia", sans-serif; */
+  font-family: "Audiowide", sans-serif;
 }
 
 body {
@@ -15,8 +16,9 @@ body {
   background-color:rgba(181,172,172,0.4);
 }
 
+/* Responsive navbar */
 .navbar {
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #333;
 }
 
@@ -64,7 +66,7 @@ body {
   }
 }
 
-
+/* Sidepanels on small screens */
 .sidepanel  {
   width: 0;
   position: fixed;
@@ -81,7 +83,7 @@ body {
 .sidepanel a {
 	padding:8px 16px;
   	text-decoration: none;
-  	font-size: 20px;
+  	font-size: 15px;
   	color: #000;
   	display: block;
   	transition: 0.3s;
@@ -125,16 +127,25 @@ body {
   color: white;
 }
 
+/* For shadow effects */
 .pop {
 
  	box-shadow: 0px 0px 0px grey;
   	-webkit-transition:  box-shadow .6s ease-out;
+    transition:  box-shadow .6s ease-out;
     box-shadow: .8px .9px 3px grey;
 
 }
 .pop:hover{ 
     box-shadow: 1px 8px 20px grey;
     -webkit-transition:  box-shadow .6s ease-in;
+    transition:  box-shadow .6s ease-in;
+}
+
+
+.img{
+  width:100%;
+  height:auto
 }
 
 .img-response {
@@ -149,4 +160,68 @@ body {
 	transform: translate(-50%, -50%);
 }
 
+/* Delete later */
+.mySlides {display:none}
+        .w3-left, .w3-right, .w3-badge {cursor:pointer}
+        .w3-badge {height:13px;width:13px;padding:0}
 
+
+        #image-slider {
+          margin: 25px auto;
+          width: 100%;
+          
+        }
+        
+        #slide-frame {
+          height: 355px;
+          overflow: hidden;
+        }
+        
+        #slides {
+          height: 375px;
+          overflow: hidden;
+          position: relative;
+        }
+        
+        #slides img {
+            position: absolute;
+          top: 100%;
+          left: 25%;
+          right: 25%;
+          width: 45%;
+          height:auto;
+        }
+        
+        #navigation {
+          margin: 5px 0 0 0;
+          text-align: center;
+          z-index: 40;
+          font-size: 25px;
+        }
+        
+        #navigation a {
+          text-decoration: none;
+          background:blueviolet;
+          padding: 12px 6px;
+          color: black;
+          display: inline-block;
+        }
+        
+        #navigation a:hover {
+          background: #0182C4;
+        }
+        #slides img {
+          z-index: 1;
+          opacity: 0;
+          /* animation */
+        
+          
+          
+          
+        }
+        
+        #slides img:target {
+          left: 10;
+          z-index: 5;
+          opacity: 50;
+        }
