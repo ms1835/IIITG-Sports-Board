@@ -1,1 +1,1 @@
-# IIITG-Sports-Board
+## Sports-Board
