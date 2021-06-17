@@ -19,7 +19,7 @@ app.use('/public',express.static('public'))
 // routes
 const userRoutes = require('./routes/user')
 const eventRoutes = require('./routes/event')
-const landingRoutes = require('./routes/landing')
+
 app.use('/',userRoutes)
 
 app.use('/new',eventRoutes)
