@@ -27,6 +27,12 @@ const coordinatorSchema = new mongoose.Schema({
     designation: {
         type: String,
         required: true
+    },
+    filePath: {
+        type: String
+    },
+    fileType: {
+        type: String
     }
 },{timestamps:true})
 

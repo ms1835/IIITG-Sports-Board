@@ -15,9 +15,13 @@ const extraCoordinator = async(req,res)=>{
             email: req.body.email,
             batch: req.body.batch,
             area: req.body.area,
-            designation: req.body.designation
+            designation: req.body.designation,
+            filePath: req.file.path,
+            fileType: req.file.mimetype
         }
         // console.log(newCoordinator)
+        console.log(req.body)
+        console.log(req.file)
 
         const coordinator = new Coordinator(newCoordinator)
         await coordinator.save()
