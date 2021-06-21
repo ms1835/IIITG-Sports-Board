@@ -1,41 +1,46 @@
 <%- include('./partials/header') -%>
 
+<!-- Button modify later -->
 
+<div class="row row-content mt-2 ml-3">
+	<a class="btn btn-primary p-3" href="/add/addCoordinator"><i class="fa fa-plus" aria-hidden="true"></i> Register New Coordinator</a>
+</div>
 
-<div class="container">
-			<div class="row row-content pt-5">
+<!-- End here -->
+
+		<div class="container">
+			<div class="row mt-5">
 				<div class="col-12">
-					<h1  class="text-center">Faculty Coordinators</h1>
+					<h1 class="text-center" style="font-size:300%;font-family:cursive;color:rgb(122, 24, 42)">Faculty Coordinators</h1>
 				</div>
-				<div class="col-12 offset-md-1 col-md-4 py-4">
-					<img class="rounded-circle border border-dark" src="/public/images/mansoor.jpg" style="width:100%;height:auto">
-					<h4 class="text-center pt-3">Md. Mansoor Khan</h4>
-					<p class="text-center">Outdoor Sports</p>
-					<p class="text-center"><i class="fa fa-envelope fa-lg"></i> mansoor@iiitg.ac.in</p>
-				</div>
-				<div class="col-12 offset-md-2 col-md-4 py-4">
-					<img class="rounded-circle  border border-dark" src="/public/images/rakesh.jpg" style="width:100%;height:auto">
-					<h4 class="text-center pt-3">Dr. Rakesh Biswas</h4>
-					<p class="text-center">Indoor Sports</p>
-					<p class="text-center"><i class="fa fa-envelope fa-lg"></i> b.rakesh@iiitg.ac.in</p>
-				</div>
+					<% for(coordinator of newCoordinators) {%> 
+						<% if(coordinator.designation == 'Faculty'){%>
+						<div class="col-8 offset-2 col-md-4 offset-md-4 my-5">
+						<img class="rounded-circle mx-auto d-block border border-dark" src="/public/images/rakesh.jpg" style="width:100%;height:auto">
+						<h3 class="text-center pt-3"><%= coordinator.name %></h3>
+						<h4 class="text-center"><%= coordinator.area %> Sports</h4>
+						<h4 class="text-center"><i class="fa fa-envelope fa-lg"></i> <%= coordinator.email %></h4>
+					</div> <%} %>
+					<%} %>
 			</div>
 
-			<div class="row row-content pt-5">
+			<div class="row mt-5">
 				<div class="col-12">
-					<h1  class="text-center">Student Coordinators</h1>
+					<h1 class="text-center" style="font-size:300%;font-family:cursive;color:rgb(122, 24, 42)">Student Coordinators</h1>
 				</div>
-				<div class="col-12 offset-md-1 col-md-4 py-4">
-					<img class="rounded-circle mx-auto d-block border border-dark" src="" style="width:100%;height:auto">
-					<h4 class="text-center pt-3">Shubham Bhagat</h4>
-					<p class="text-center">Outdoor Sports</p>
-				</div>
-				<div class="col-12 offset-md-2 col-md-4 py-4">
-					<img class="rounded-circle mx-auto d-block border border-dark" src="" style="width:100%;height:auto">
-					<h4 class="text-center pt-3">Ashmit Ayush</h4>
-					<p class="text-center">Indoor Sports</p>
-				</div>
+					<% for(coordinator of newCoordinators) {%> 
+						<% if(coordinator.designation == 'Student'){%>
+						<div class="col-8 offset-2 col-md-4 offset-md-4 my-5">
+						<img class="rounded-circle mx-auto d-block border border-dark" src="/public/images/rakesh.jpg" style="width:100%;height:auto">
+						<h3 class="text-center pt-3"><%= coordinator.name %></h3>
+						<h4 class="text-center"><%= coordinator.area %> Sports</h4>
+						<h4 class="text-center"><i class="fa fa-envelope fa-lg"></i> <%= coordinator.email %></h4>
+					</div> <%} %>
+					<%} %>
 			</div>
 		</div>
 
 <%- include('./partials/footer') -%>
+<!-- <% if(true){ %>
+	<h1>foo</h1>
+ <% } %> -->

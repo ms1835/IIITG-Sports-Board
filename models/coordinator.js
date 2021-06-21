@@ -9,7 +9,12 @@ const mongoose = require('mongoose')
 const coordinatorSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        // required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
     },
     batch: {
         type: Number,
@@ -18,11 +23,6 @@ const coordinatorSchema = new mongoose.Schema({
     area: {
         type: String,
         required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true
     },
     designation: {
         type: String,

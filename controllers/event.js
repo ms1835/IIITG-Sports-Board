@@ -9,14 +9,14 @@ const renderAddEventPage = async(req,res)=>{
 }
 const extraEvent = async(req,res)=>{
     try{
-        console.log(req.body)
+        // console.log(req.body)
         const newEvent={
             name: req.body.name,
             startDate: req.body.startDate,
             endDate: req.body.endDate,
             description: req.body.description
         }
-        console.log(newEvent)
+        // console.log(newEvent)
 
         const event = new Event(newEvent)
         await event.save()

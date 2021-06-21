@@ -19,11 +19,11 @@ app.use('/public',express.static('public'))
 // routes
 const userRoutes = require('./routes/user')
 const eventRoutes = require('./routes/event')
+const coordinatorRoutes = require('./routes/coordinator')
 
 app.use('/',userRoutes)
-
 app.use('/new',eventRoutes)
-
+app.use('/add',coordinatorRoutes)
 
 app.get("*",(req,res)=>{
 	res.send("Error")

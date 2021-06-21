@@ -1,4 +1,6 @@
 const {Event} = require('../models/event')
+const {Coordinator} = require('../models/coordinator')
+
 const displayEvents = async(req,res)=>{
     try{
         const renderHomePage = async(req,res)=>{
@@ -22,13 +24,23 @@ const renderEventPage = async(req,res)=>{
         console.log(err)
     }
 }
-const renderContactPage = async(req,res)=>{
+const displayCoordinators = async(req,res)=>{
     try{
-        res.render('contact')
+        const renderContactPage = async(req,res)=>{
+            try{
+                res.render('contact')
+            }catch(err){
+                console.log(err)
+            }
+        }
+        const foundCoordinators = await Coordinator.find()
+        console.log(foundCoordinators)
+        res.render('contact',{newCoordinators:foundCoordinators})
     }catch(err){
         console.log(err)
     }
 }
+
 const renderCricketPage = async(req,res)=>{
     try{
         res.render('cricket')
@@ -86,6 +98,6 @@ const renderBadmintonPage = async(req,res)=>{
     }
 }
 
-module.exports={renderEventPage,renderContactPage,renderCricketPage,renderFootballPage,
+module.exports={renderEventPage,renderCricketPage,renderFootballPage,
                 renderVolleyballPage,renderAthleticsPage,renderChessPage,renderCarromPage,
-                renderTableTennisPage,renderBadmintonPage,displayEvents}
+                renderTableTennisPage,renderBadmintonPage,displayEvents,displayCoordinators}

@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
-const {renderEventPage,renderContactPage,renderCricketPage,renderFootballPage,
+const {renderEventPage,renderCricketPage,renderFootballPage,
         renderVolleyballPage,renderAthleticsPage,renderChessPage,renderCarromPage,
-        renderTableTennisPage,renderBadmintonPage, displayEvents} = require('../controllers/user')
+        renderTableTennisPage,renderBadmintonPage, displayEvents,displayCoordinators} = require('../controllers/user')
 
 
 
@@ -11,7 +11,7 @@ const {renderEventPage,renderContactPage,renderCricketPage,renderFootballPage,
 router.get('/',displayEvents)
 
 router.get('/events',renderEventPage)
-router.get('/contact',renderContactPage)
+router.get('/contact',displayCoordinators)
 router.get('/outdoor/cricket',renderCricketPage)
 router.get('/outdoor/football',renderFootballPage)
 router.get('/outdoor/volleyball',renderVolleyballPage)
