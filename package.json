@@ -1,21 +1,19 @@
 {
-  "name": "iiitg-sports-board",
+  "name": "sports-board",
   "version": "1.0.0",
   "description": "\"Sports Board Website\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ms1835/IIITG-Sports-Board.git"
+    "url": "Sports-Board"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ms1835/IIITG-Sports-Board/issues"
-  },
-  "homepage": "https://github.com/ms1835/IIITG-Sports-Board#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-flash": "^0.1.1",
