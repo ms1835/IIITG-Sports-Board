@@ -30,4 +30,4 @@ For contributing to this project, fork the repo and clone it to your local syste
 
 ## Contributors
 
-[![](https://github.com/ms1835.png?size=20)](https://github.com/ms1835)
+[![](https://github.com/ms1835.png?size=10)](https://github.com/ms1835)
