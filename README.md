@@ -20,5 +20,9 @@ Make sure you have Node.js and npm installed
 
     $ npm start
     
+## Development
+For development purpose of project,use :
+    $ npm run dev
+    
 ## Contribute
 For contributing to this project, fork the repo and clone it to your local system. Do read the [guidelines](https://github.com/IIITG-Open-Source/Guidelines) and follow the instructions before making contribution.
