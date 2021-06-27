@@ -6,6 +6,7 @@ Node.js application using express and ejs.
 - It provides an overview of different indoor and outdoor sports.
 - Insight of events organised at IIITG and also events at which IIITG participated.
 - Photos of the events and sports organised.
+- Details of present student and faculty coordinators.
 
 ## Installation
 Make sure you have Node.js and npm installed
@@ -18,3 +19,6 @@ Make sure you have Node.js and npm installed
 ## Run the Project
 
     $ npm start
+    
+## Contribute
+For contributing to this project, fork the repo and clone it to your local system. Do read the [guidelines](https://github.com/IIITG-Open-Source/Guidelines) and follow the instructions before making contribution.
