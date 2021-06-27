@@ -4,6 +4,7 @@ const router = express.Router()
 const multer = require('multer')
 
 const {renderAddCoordinatorPage,extraCoordinator} = require('../controllers/coordinator')
+const { isLoggedIn } = require('../middleware/authMiddleware')
 const storage = multer.diskStorage({
     destination: function(req,file,cb){
       cb(null,'uploads')
@@ -21,7 +22,7 @@ const storage = multer.diskStorage({
 /*----------------------
   GET ROUTES
 ------------------------*/
-router.get('/addCoordinator',renderAddCoordinatorPage)
+router.get('/addCoordinator',[isLoggedIn],renderAddCoordinatorPage)
 /*----------------------
   POST ROUTES
 ------------------------*/

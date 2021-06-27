@@ -1,24 +1,20 @@
+// User routes
 const express = require('express')
 const router = express.Router()
+const {renderLoginPage,loginUser,logout,renderSignUpPage, signupUser} = require('../controllers/user')
+const { isLoggedIn } = require('../middleware/authMiddleware')
 
-const {renderEventPage,renderCricketPage,renderFootballPage,
-        renderVolleyballPage,renderAthleticsPage,renderChessPage,renderCarromPage,
-        renderTableTennisPage,renderBadmintonPage, displayEvents,displayCoordinators} = require('../controllers/user')
+/*----------------------
+  GET ROUTES
+------------------------*/
+router.get('/login',renderLoginPage)
+router.get('/signUp',renderSignUpPage)
+router.get('/logout',[isLoggedIn],logout)
 
+/*----------------------
+  POST ROUTES
+------------------------*/
+router.post('/login',loginUser)
+router.post('/signUp',signupUser)
 
-
-
-router.get('/',displayEvents)
-
-router.get('/events',renderEventPage)
-router.get('/contact',displayCoordinators)
-router.get('/outdoor/cricket',renderCricketPage)
-router.get('/outdoor/football',renderFootballPage)
-router.get('/outdoor/volleyball',renderVolleyballPage)
-router.get('/outdoor/athletics',renderAthleticsPage)
-router.get('/indoor/chess',renderChessPage)
-router.get('/indoor/carrom',renderCarromPage)
-router.get('/indoor/tableTennis',renderTableTennisPage)
-router.get('/indoor/badminton',renderBadmintonPage)
-
-module.exports = router
+module.exports=router

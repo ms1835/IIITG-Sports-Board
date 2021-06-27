@@ -3,9 +3,16 @@ const express = require('express')
 const router = express.Router()
 
 const {renderAddEventPage,extraEvent} = require('../controllers/event')
-router.get('/addEvent',renderAddEventPage)
+const { isLoggedIn } = require('../middleware/authMiddleware')
 
+/*----------------------
+  GET ROUTES
+------------------------*/
+router.get('/addEvent',[isLoggedIn],renderAddEventPage)
 
+/*----------------------
+  POST ROUTES
+------------------------*/
 router.post('/addEvent',extraEvent)
 
 

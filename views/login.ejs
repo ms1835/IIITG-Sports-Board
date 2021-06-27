@@ -1,5 +1,30 @@
 <%- include('./partials/header') -%>
 
-
+<body style="background-image: url('/public/images/bg.jpeg');opacity:0.9">
+    <div class="container mt-3">
+      <div class="offset-1 col-10 col-md-6 offset-md-3 align-self-center">
+        <h2 class="text-center mb-4 font-weight-bold" style="color:rgb(122,24,42);font-family:cursive">Login </h2>
+        <form method="POST" action="/auth/login">
+            <div class="form-group">
+                <label for="email" class="font-weight-bold">Email: </label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div><br>
+            
+            <div class="form-group">
+              <label for="pwd" class="font-weight-bold">Password:  </label>
+              <input type="password" class="form-control" id="pwd" name="password">
+            </div>
+            <br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
+            </div>
+            <div>
+                <p>Did not registered yet. <a class="text-danger" href="/auth/signUp">Sign Up</a> here</p>
+            </div>
+        </form>
+      </div>
+    </div>
+    
+    </body>
 
 <%- include('./partials/footer') -%>

@@ -1,3 +1,4 @@
+// Event controller
 const {Event} = require('../models/event')
 
 const renderAddEventPage = async(req,res)=>{

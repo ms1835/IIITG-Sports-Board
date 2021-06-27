@@ -1,3 +1,4 @@
+// Coordinator controller
 const {Coordinator} = require('../models/coordinator')
 
 const renderAddCoordinatorPage = async(req,res)=>{

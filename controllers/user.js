@@ -1,103 +1,82 @@
-const {Event} = require('../models/event')
+// User controller
+const {User} = require('../models/user')
 const {Coordinator} = require('../models/coordinator')
+const bcrypt = require('bcrypt')
 
-const displayEvents = async(req,res)=>{
+const renderLoginPage = async(req,res) => {
     try{
-        const renderHomePage = async(req,res)=>{
-            try{
-                res.render('home')
-            }catch(err){
-                console.log(err)
-            }
+        res.render('login')
+    }catch(err){
+        console.log(err)
+    }
+}
+
+const loginUser = async(req,res) => {
+    try{
+        const found = await Coordinator.findOne({email: req.body.email})
+        if(!found){
+            console.log('Invalid password or coordinator doesn\'t exist')
+            res.redirect('/error')
+            return
         }
-        const foundEvents = await Event.find()
-        console.log(foundEvents)
-        res.render('home',{newEvents:foundEvents})
-    }catch(err){
-        console.log(err)
-    }
-}
-const renderEventPage = async(req,res)=>{
-    try{
-        res.render('events')
-    }catch(err){
-        console.log(err)
-    }
-}
-const displayCoordinators = async(req,res)=>{
-    try{
-        const renderContactPage = async(req,res)=>{
-            try{
-                res.render('contact')
-            }catch(err){
-                console.log(err)
-            }
+        // console.log(foundUser)
+        const foundUser = await User.findOne({email: found.email})
+        if((!foundUser)||!(foundUser.authenticate(req.body.password))){
+            console.log('Invalid password or user doesn\'t exist')
+            res.redirect('/error')
         }
-        const foundCoordinators = await Coordinator.find()
-        console.log(foundCoordinators)
-        res.render('contact',{newCoordinators:foundCoordinators})
+        else{
+            console.log('You are logged in')
+            req.session.isLoggedIn = true
+            req.session.user = foundUser
+            req.flash('success','You are logged in.')
+            res.redirect('/')
+        }
     }catch(err){
         console.log(err)
     }
 }
 
-const renderCricketPage = async(req,res)=>{
-    try{
-        res.render('cricket')
-    }catch(err){
-        console.log(err)
-    }
-}
-const renderFootballPage = async(req,res)=>{
-    try{
-        res.render('football')
-    }catch(err){
-        console.log(err)
-    }
-}
-const renderVolleyballPage = async(req,res)=>{
-    try{
-        res.render('volleyball')
-    }catch(err){
-        console.log(err)
-    }
-}
-const renderAthleticsPage = async(req,res)=>{
-    try{
-        res.render('athletics')
-    }catch(err){
-        console.log(err)
-    }
-}
-const renderChessPage = async(req,res)=>{
-    try{
-        res.render('chess')
-    }catch(err){
-        console.log(err)
-    }
-}
-const renderCarromPage = async(req,res)=>{
-    try{
-        res.render('carrom')
-    }catch(err){
-        console.log(err)
-    }
-}
-const renderTableTennisPage = async(req,res)=>{
-    try{
-        res.render('tableTennis')
-    }catch(err){
-        console.log(err)
-    }
-}
-const renderBadmintonPage = async(req,res)=>{
-    try{
-        res.render('badminton')
-    }catch(err){
-        console.log(err)
+const logout = async(req,res) => {
+    if(req.session){
+        req.session.destroy((err) => {
+            if(err){
+                console.log(err)
+                res.redirect('/error')
+            }else{
+                req.session = null
+                res.redirect('/')
+            }
+        })
     }
 }
 
-module.exports={renderEventPage,renderCricketPage,renderFootballPage,
-                renderVolleyballPage,renderAthleticsPage,renderChessPage,renderCarromPage,
-                renderTableTennisPage,renderBadmintonPage,displayEvents,displayCoordinators}
+const renderSignUpPage = async(req,res) => {
+    try{
+        res.render('signUp')
+    }catch(err){
+        console.log(err)
+        res.redirect('/error')
+    }
+}
+
+const signupUser = async(req,res) => {
+    try{
+        const newUser = {
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
+            role: req.body.role
+        }
+        const salt = bcrypt.genSaltSync(10)
+        newUser.password = bcrypt.hashSync(newUser.password,salt)
+        const user = new User(newUser)
+        await user.save()
+        res.redirect('/')
+    }catch(err){
+        console.log(err)
+        res.redirect('/error')
+    }
+}
+
+module.exports={renderLoginPage,loginUser,logout,renderSignUpPage,signupUser}
