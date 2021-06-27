@@ -26,6 +26,14 @@ app.use('/',userRoutes)
 app.use('/new',eventRoutes)
 app.use('/add',coordinatorRoutes)
 
+app.get('/login',(req,res)=>{
+	try{
+		res.render('login')
+	}catch(err){
+		console.log(err)
+	}
+	
+})
 app.get("*",(req,res)=>{
 	res.send("Error")
 })

@@ -31,9 +31,10 @@
 					<% for(coordinator of newCoordinators) {%> 
 						<% if(coordinator.designation == 'Student'){%>
 						<div class="col-8 offset-2 col-md-4 offset-md-4 my-5">
-						<img class="rounded-circle mx-auto d-block border border-dark" src="/<%= coordinator?.filePath %>" style="width:100%;height:auto" type="image">
+						<!-- <img class="rounded-circle mx-auto d-block border border-dark" src="/<%= coordinator?.filePath %>" style="width:100%;height:auto" type="image"> -->
 						<h3 class="text-center pt-3"><%= coordinator.name %></h3>
 						<h4 class="text-center"><%= coordinator.area %> Sports</h4>
+						<h4 class="text-center">B.Tech <%= coordinator.batch %> batch</h4>
 						<h4 class="text-center"><i class="fa fa-envelope fa-lg"></i> <%= coordinator.email %></h4>
 					</div> <%} %>
 					<%} %>
