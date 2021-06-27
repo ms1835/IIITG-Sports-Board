@@ -22,6 +22,7 @@ Make sure you have Node.js and npm installed
     
 ## Development
 For development purpose of project,use :
+
     $ npm run dev
     
 ## Contribute
