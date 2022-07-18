@@ -4,7 +4,7 @@ Node.js application using express and ejs.
 ## Description
 - This is Sports website of IIITG.
 - It provides an overview of different indoor and outdoor sports.
-- Insight of events organised at IIITG and also events at which IIITG participated.
+- Insight of events organised at the institution and other events at which students participated.
 - Photos of the events and sports organised.
 - Details of present student and faculty coordinators.
 
