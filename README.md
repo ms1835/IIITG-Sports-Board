@@ -31,5 +31,6 @@ For contributing to this project, fork the repo and clone it to your local syste
 ## Contributors
 
 <a href="https://github.com/ms1835/IIITG-Sports-Board/graphs/contributors">
+    
   <img src="https://contrib.rocks/image?repo=ms1835/IIITG-Sports-Board" />
 </a>
